@@ -11,5 +11,21 @@
   },
   "bin": {
     "bcc": "cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BrightContext/brightcontext-cli.git"
+  },
+  "keywords": [
+    "brightcontext",
+    "bcc",
+    "realtime",
+    "socket",
+    "websocket",
+    "messaging",
+    "cli"
+  ],
+  "bugs": {
+    "url": "https://github.com/BrightContext/brightcontext-cli/issues"
   }
 }
