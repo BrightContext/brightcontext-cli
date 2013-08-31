@@ -5,7 +5,7 @@ A command line interface to [brightcontext](http://brightcontext.com)
 # Installation
 
     # install the "bcc" command globaly
-    npm install -g brightcontext-cli
+    npm i -g brightcontext-cli
 
 
 # Usage
@@ -17,6 +17,11 @@ STDIN -> BrightContext
   
     # to a QuantChannel Input or custom ThruChannel Subchannel
     cat package.json | bcc --apikey=$bcc_api_key --project=$bcc_project_name  --inputchannel=$bcc_input_channel_name --inputname=$bcc_input_name
+    
+    # the json payload is tokenized by matching brackets
+    # so you should not need any whitespace in between messages
+    # and you can safely dump multiple files or multiple messages
+    cat 1.json 2.json 3.json | bcc --apikey=$bcc_api_key --project=$bcc_project_name  --inputchannel=$bcc_input_channel_name --inputname=$bcc_input_name
 
 BrightContext -> STDOUT
     
