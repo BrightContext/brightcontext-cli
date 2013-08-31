@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "command line interface to brightcontext.com",
   "main": "index.js",
-  "author": "",
+  "author": "Steven Fusco",
   "license": "MIT",
   "dependencies": {
     "brightcontext": "~1.8.0",

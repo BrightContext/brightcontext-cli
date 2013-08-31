@@ -73,7 +73,7 @@
 
   function die (err) {
     process.stdout.write(err);
-    process.exit();
+    process.exit(13);
   }
 
   if (argv.dryrun) {
