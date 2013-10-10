@@ -4,7 +4,7 @@ A command line interface to [brightcontext](http://brightcontext.com)
 
 # Installation
 
-    # install the "bcc" command globaly
+    # install the "bcc" and "bccql" commands globaly
     npm i -g brightcontext-cli
 
 
@@ -37,7 +37,38 @@ Testing (STDIN -> STDOUT)
     # show what will be sent, but don't actually send it
     cat package.json | bcc --dryrun
 
+Data Store Queries
+
+    # latest history
+    bccql --apikey $bcc_api_key \
+        --project $bcc_project_name \
+        --datastore $bcc_datastore_name
+    
+    # older history
+    bccql --apikey $bcc_api_key --project $bcc_project_name \
+        --datastore $bcc_datastore_name \
+        --query.sinceTS `node -e 'console.log(Date.now() - 7.2e6)'` \
+        --query.limit 10
+
+    # history with filter
+    bccql --apikey $bcc_api_key --project $bcc_project_name \
+        --datastore $bcc_datastore_name \
+        --query.sinceTS `node -e 'console.log(Date.now() - 7.2e6)'` \
+        --query.limit 10 \
+        --query.filters.paramname $param1value
+    
+    # custom
+    bccql --apikey $bcc_api_key \
+        --project $bcc_project_name \
+        --datastore $bcc_datastore_name \
+        --query.queryName 'rollupInRange' \
+        --query.queryParams.start=`node -e 'console.log(Date.now() - 7.2e6)'` \
+        --query.queryParams.end=`node -e 'console.log(Date.now())'` \
+        --query.queryParams.timewindow=60000
+
 # Limitations
 
 - Must be valid json that will pass through node native JSON.parse()
 - If any feed errors occur, the process will exit with code 13
+
+

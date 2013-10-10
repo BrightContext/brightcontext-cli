@@ -10,7 +10,8 @@
     "optimist": "~0.6.0"
   },
   "bin": {
-    "bcc": "cli.js"
+    "bcc": "cli.js",
+    "bccql": "query.js"
   },
   "repository": {
     "type": "git",
