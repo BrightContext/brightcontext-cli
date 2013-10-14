@@ -6,7 +6,7 @@
   "author": "Steven Fusco",
   "license": "MIT",
   "dependencies": {
-    "brightcontext": "~1.8.0",
+    "brightcontext": "~1.8.1",
     "optimist": "~0.6.0"
   },
   "bin": {
@@ -27,6 +27,6 @@
     "cli"
   ],
   "bugs": {
-    "url": "https://github.com/BrightContext/brightcontext-cli/issues"
+    "url": "http://www.brightcontext.com/about/contact"
   }
 }
